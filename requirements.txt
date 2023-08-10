@@ -1,5 +1,4 @@
 plotly
-pickle
 pathlib
 Path
 numpy
