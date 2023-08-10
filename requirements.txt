@@ -1,0 +1,6 @@
+
+httpx_oauth
+mysql-connector-python
+pandas
+python-dotenv
+streamlit
