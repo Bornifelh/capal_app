@@ -1,4 +1,4 @@
-import plotly.express as px
+import plotly as px
 import pickle
 from pathlib import Path
 import numpy as np
