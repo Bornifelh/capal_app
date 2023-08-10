@@ -1,5 +1,11 @@
-
-httpx_oauth
+plotly.express
+pickle
+pathlib
+Path
+numpy
+matplotlib.pyplot
+matplotlib.pyplot as plt
+mysql.connector
 mysql-connector-python
 pandas
 python-dotenv
