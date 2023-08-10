@@ -4,7 +4,7 @@ pathlib
 Path
 numpy
 matplotlib.pyplot
-matplotlib.pyplot as plt
+matplotlib.pyplot
 mysql.connector
 mysql-connector-python
 pandas
