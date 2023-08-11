@@ -422,6 +422,9 @@ def transaction_content_views_depenses():
             btn_validation_sortie = st.form_submit_button("Valider")
 transaction_content_views_depenses()
 
+def recap_transaction_sortie_caisse_content():
+    st.subheader("Recap des depenses")
+
 
 def recap_transaction_ventes_content_view():
     if st.session_state['show_recap_transaction_ventes_content_view']:
