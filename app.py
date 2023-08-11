@@ -75,7 +75,7 @@ def accueil_content():
             with expanderTransactions:
                 saisiCaisse_btn = expanderTransactions.button("Saisie de caisse")
                 sortiCaisse_btn = expanderTransactions.button("Sortie de caisse")
-                btn_tables = expanderTransactions.button("Recap des ventes")
+                btn_tables_ventes = expanderTransactions.button("Recap des entrées caisse")
                 btn_tablesDepenses = expanderTransactions.button("Recap des dépenses")
                     
                 
@@ -329,7 +329,7 @@ def accueil_content():
                 st.session_state['show_dashboard_content'] = False
                 st.session_state['show_recap_transaction_ventes_content_view'] = False
                 
-            if btn_tables:
+            if btn_tables_ventes:
                 st.session_state['show_recap_transaction_ventes_content_view'] = True
                 st.session_state['show_transaction_content_views_depenses'] = False
                 st.session_state['show_transaction_content_views'] = False
@@ -425,7 +425,7 @@ transaction_content_views_depenses()
 
 def recap_transaction_ventes_content_view():
     if st.session_state['show_recap_transaction_ventes_content_view']:
-        st.subheader("Recap des transactions de ventes")
+        st.subheader("Recap des transactions des entrées caisse")
 recap_transaction_ventes_content_view()
 
 sectionListClient = st.container()
