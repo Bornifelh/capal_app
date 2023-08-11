@@ -342,6 +342,19 @@ def accueil_content():
                 st.session_state['show_location_content'] = False
                 st.session_state['show_supprime_client_content'] = False
                 st.session_state['show_dashboard_content'] = False
+            if btn_tablesDepenses:
+                st.session_state['show_recap_transaction_ventes_content_view'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
+                st.session_state['show_transaction_content_views'] = False
+                st.session_state['show_ajout_client'] = False
+                st.session_state['show_location_verif_content'] = False
+                st.session_state['show_recapVenteGlaces_content'] = False
+                st.session_state['show_vente_glaces_content'] = False
+                st.session_state['show_register_user_content'] = False
+                st.session_state['show_location_paiement_content'] = False
+                st.session_state['show_location_content'] = False
+                st.session_state['show_supprime_client_content'] = False
+                st.session_state['show_dashboard_content'] = False
 
 
 #------------------------------- Fin accueil et Menu -----------------------------------#
