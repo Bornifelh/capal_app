@@ -54,7 +54,11 @@ if 'show_ajout_client' not in st.session_state:
     st.session_state['show_ajout_client'] = False
 
 
-
+if 'show_transaction_content_views_depenses' not in st.session_state:
+    st.session_state['show_transaction_content_views_depenses'] = False
+    
+if 'show_recap_transaction_ventes_content_view' not in st.session_state:
+    st.session_state['show_recap_transaction_ventes_content_view'] = False
 
 
 
@@ -71,6 +75,8 @@ def accueil_content():
             with expanderTransactions:
                 saisiCaisse_btn = expanderTransactions.button("Saisie de caisse")
                 sortiCaisse_btn = expanderTransactions.button("Sortie de caisse")
+                btn_tables = expanderTransactions.button("Recap des ventes")
+                btn_tablesDepenses = expanderTransactions.button("Recap des dépenses")
                     
                 
                 #---------------------------------------------------------------
@@ -128,6 +134,7 @@ def accueil_content():
                 st.session_state['show_location_content'] = False
                 st.session_state['show_transaction_content_views'] = False
                 st.session_state['show_supprime_client_content'] = True
+                st.session_state['show_transaction_content_views_depenses'] = False
             
             
             if tabrecap_btn:
@@ -141,6 +148,7 @@ def accueil_content():
                 st.session_state['show_location_content'] = False
                 st.session_state['show_transaction_content_views'] = False
                 st.session_state['show_supprime_client_content'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
                 
             
             if gestlocat_btn:
@@ -154,6 +162,7 @@ def accueil_content():
                 st.session_state['show_transaction_content_views'] = False
                 st.session_state['show_supprime_client_content'] = False
                 st.session_state['show_dashboard_content'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
                         
             if tabdeb_btn:
                 st.session_state['show_location_verif_content'] = False
@@ -166,6 +175,7 @@ def accueil_content():
                 st.session_state['show_transaction_content_views'] = False
                 st.session_state['show_supprime_client_content'] = False
                 st.session_state['show_dashboard_content'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
                 tabdebarquement_content()
                         
             if gestClient_btn :
@@ -179,6 +189,7 @@ def accueil_content():
                 st.session_state['show_location_content'] = False
                 st.session_state['show_transaction_content_views'] = False
                 st.session_state['show_dashboard_content'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
                 #gestion_client_content()
                         
             if btnRegister:
@@ -192,6 +203,7 @@ def accueil_content():
                 st.session_state['show_transaction_content_views'] = False
                 st.session_state['show_supprime_client_content'] = False
                 st.session_state['show_dashboard_content'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
                 
                             
             if BtnListProfil:
@@ -205,6 +217,7 @@ def accueil_content():
                 st.session_state['show_transaction_content_views'] = False
                 st.session_state['show_supprime_client_content'] = False
                 st.session_state['show_dashboard_content'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
                 list_client()
                         
             if listLocation:
@@ -218,6 +231,7 @@ def accueil_content():
                 st.session_state['show_transaction_content_views'] = False
                 st.session_state['show_supprime_client_content'] = False
                 st.session_state['show_dashboard_content'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
                 location_list()
                             
             if paiementLocation:
@@ -231,6 +245,7 @@ def accueil_content():
                 st.session_state['show_transaction_content_views'] = False
                 st.session_state['show_supprime_client_content'] = False
                 st.session_state['show_dashboard_content'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
                         
             if verifLocation:
                 st.session_state['show_vente_glaces_content'] = False
@@ -242,6 +257,7 @@ def accueil_content():
                 st.session_state['show_transaction_content_views'] = False
                 st.session_state['show_supprime_client_content'] = False
                 st.session_state['show_dashboard_content'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
                 
                 
             if venteGlace_btn:
@@ -255,6 +271,7 @@ def accueil_content():
                 st.session_state['show_transaction_content_views'] = False
                 st.session_state['show_supprime_client_content'] = False
                 st.session_state['show_dashboard_content'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
                 #venteGlaces_content()
                 
             if recapVenteGlaces_btn:
@@ -268,6 +285,7 @@ def accueil_content():
                 st.session_state['show_transaction_content_views'] = False
                 st.session_state['show_supprime_client_content'] = False
                 st.session_state['show_dashboard_content'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
                 
                 
                 
@@ -282,7 +300,34 @@ def accueil_content():
                 st.session_state['show_location_content'] = False
                 st.session_state['show_supprime_client_content'] = False
                 st.session_state['show_dashboard_content'] = False
+                st.session_state['show_transaction_content_views_depenses'] = False
                 
+            if sortiCaisse_btn:
+                st.session_state['show_transaction_content_views_depenses'] = True
+                st.session_state['show_transaction_content_views'] = False
+                st.session_state['show_ajout_client'] = False
+                st.session_state['show_location_verif_content'] = False
+                st.session_state['show_recapVenteGlaces_content'] = False
+                st.session_state['show_vente_glaces_content'] = False
+                st.session_state['show_register_user_content'] = False
+                st.session_state['show_location_paiement_content'] = False
+                st.session_state['show_location_content'] = False
+                st.session_state['show_supprime_client_content'] = False
+                st.session_state['show_dashboard_content'] = False
+                
+            if btn_tables:
+                st.session_state['show_recap_transaction_ventes_content_view'] = True
+                st.session_state['show_transaction_content_views_depenses'] = False
+                st.session_state['show_transaction_content_views'] = False
+                st.session_state['show_ajout_client'] = False
+                st.session_state['show_location_verif_content'] = False
+                st.session_state['show_recapVenteGlaces_content'] = False
+                st.session_state['show_vente_glaces_content'] = False
+                st.session_state['show_register_user_content'] = False
+                st.session_state['show_location_paiement_content'] = False
+                st.session_state['show_location_content'] = False
+                st.session_state['show_supprime_client_content'] = False
+                st.session_state['show_dashboard_content'] = False
 
 
 #------------------------------- Fin accueil et Menu -----------------------------------#
@@ -342,13 +387,32 @@ def transaction_content_views():
     if st.session_state['show_transaction_content_views']:
         st.subheader("Saisie de caisse - entrée des fonds")
         with st.form(key='FormTransact'):
-            venant_de = st.text_input(label="", value="", placeholder="Provenance des fonds")
+            venant_de = st.text_input(label="Provenance", value="", placeholder="Provenance des fonds")
             dateEncaissement = st.date_input(label="Date encaissement")
             detailsEncaissement = st.text_area(label="Details", value="", placeholder="Details sur la provenance des fonds")
-            montantEncaissement = st.text_input(label="", value="", placeholder="Montant réçu")
+            montantEncaissement = st.text_input(label="Montant", value="", placeholder="Montant réçu")
             
             btn_validation = st.form_submit_button("Valider")
 transaction_content_views()
+
+
+def transaction_content_views_depenses():
+    if st.session_state['show_transaction_content_views_depenses']:
+        st.subheader("Saisir une sortie de caisse")
+        with st.form(key='FormTransactionSortie'):
+            beneficiaire = st.text_input(label="Bénéficiaire", value="", placeholder="Saisir le Bénéficiaire")
+            dateSortieCaisse = st.date_input(label="Date de saisie")
+            detailSortieCaisse = st.text_area(label="Details", value="", placeholder="Saisir les details de la sortie de caisse")
+            saisiPar = st.text_input(label="Montant", value="", placeholder="Montant de la dépense")
+            
+            btn_validation_sortie = st.form_submit_button("Valider")
+transaction_content_views_depenses()
+
+
+def recap_transaction_ventes_content_view():
+    if st.session_state['show_recap_transaction_ventes_content_view']:
+        st.subheader("Recap des transactions de ventes")
+recap_transaction_ventes_content_view()
 
 sectionListClient = st.container()
 
