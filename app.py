@@ -455,7 +455,9 @@ def transaction_content_views_depenses():
 transaction_content_views_depenses()
 
 def recap_transaction_sortie_caisse_content():
-    st.subheader("Recap des depenses")
+    if st.session_state['show_recap_transaction_sortie_caisse_content']:
+        st.subheader("Recap des depenses")
+recap_transaction_sortie_caisse_content()
 
 
 def recap_transaction_ventes_content_view():
