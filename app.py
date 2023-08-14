@@ -7,6 +7,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import mysql.connector
+import seaborn as sns
 
 
 mysql_config = {
@@ -130,7 +131,7 @@ def accueil_content():
                 
             # Afficher le contenu de la page sélectionnée
             if btn_analyse_graphes:
-                st.st.session_state.show_graphes_content_view = True
+                st.session_state.show_graphes_content_view = True
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -146,7 +147,7 @@ def accueil_content():
                 st.session_state.show_recap_transaction_sortie_caisse_content = False
             
             if suppClient_btn:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -163,7 +164,7 @@ def accueil_content():
             
             
             if tabrecap_btn:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = True
                 st.session_state.show_ajout_client = False
@@ -180,7 +181,7 @@ def accueil_content():
                 
             
             if gestlocat_btn:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -196,7 +197,7 @@ def accueil_content():
                 st.session_state.show_recap_transaction_sortie_caisse_content = False
                         
             if tabdeb_btn:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -213,7 +214,7 @@ def accueil_content():
                 tabdebarquement_content()
                         
             if gestClient_btn :
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = True
@@ -230,7 +231,7 @@ def accueil_content():
                 #gestion_client_content()
                         
             if btnRegister:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -247,7 +248,7 @@ def accueil_content():
                 
                             
             if BtnListProfil:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -264,7 +265,7 @@ def accueil_content():
                 list_client()
                         
             if listLocation:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -281,7 +282,7 @@ def accueil_content():
                 location_list()
                             
             if paiementLocation:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -297,7 +298,7 @@ def accueil_content():
                 st.session_state.show_recap_transaction_sortie_caisse_content = False
                         
             if verifLocation:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -314,7 +315,7 @@ def accueil_content():
                 
                 
             if venteGlace_btn:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -331,7 +332,7 @@ def accueil_content():
                 #venteGlaces_content()
                 
             if recapVenteGlaces_btn:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -349,7 +350,7 @@ def accueil_content():
                 
                 
             if saisiCaisse_btn:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -365,7 +366,7 @@ def accueil_content():
                 st.session_state.show_recap_transaction_sortie_caisse_content = False
                 
             if sortiCaisse_btn:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -381,7 +382,7 @@ def accueil_content():
                 st.session_state.show_recap_transaction_sortie_caisse_content = False
                 
             if btn_tables_ventes:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = True
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -397,7 +398,7 @@ def accueil_content():
                 st.session_state.show_recap_transaction_sortie_caisse_content = False
                 
             if btn_tablesDepenses:
-                st.st.session_state.show_graphes_content_view = False
+                st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -429,6 +430,56 @@ tabdebarquementSection  = st.container()
 loginSection = st.container()
 registerSection = st.container()
 dashboardSection = st.container()
+analyse_graphes = st.container()
+
+def analyseGraphes():
+    with analyse_graphes:
+        if st.session_state.show_graphes_content_view:
+            st.subheader('Comparatif des Montants de Sortie et d\'Entrée de Caisse')
+            connection = mysql.connector.connect(**mysql_config)
+            cursor = connection.cursor()
+            
+            # Entree caisse
+            query_sortie_caisse = "SELECT montantSorti FROM SortieCaisse"
+            cursor.execute(query_sortie_caisse)
+            data = cursor.fetchall()
+            cursor.close()
+            connection.close()
+            montants_sortis = [float(item[0]) for item in data]  # Conversion en float
+            
+            # Entree caisse
+            connection = mysql.connector.connect(**mysql_config)
+            cursor = connection.cursor()
+            
+            query_entree_caisse = "SELECT montantEncaissement FROM EntreeCaisse"
+            cursor.execute(query_entree_caisse)
+            data2 = cursor.fetchall()
+            cursor.close()
+            connection.close()
+            montants_entres = [float(item[0]) for item in data2]  # Conversion en float
+            
+            # Création d'une liste combinée de montants
+            montants_combines = montants_sortis + montants_entres
+            
+            # Calcul des sommes
+            sum_montant_sorti = sum(montants_sortis)
+            sum_montant_entree = sum(montants_entres)
+            
+            # Labels pour le graphique
+            labels = ['Sortie de Caisse', 'Entrée de Caisse']
+            
+            # Données pour le graphique
+            data_for_pie = [sum_montant_sorti, sum_montant_entree]
+            
+            # Création du graphique camembert
+            plt.figure(figsize=(8, 6))
+            plt.pie(data_for_pie, labels=labels, autopct='%1.1f%%', startangle=140)
+            plt.axis('equal')  # Pour que le camembert soit circulaire
+            
+            st.set_option('deprecation.showPyplotGlobalUse', False)
+            st.pyplot()
+analyseGraphes()
+
 
 
 
