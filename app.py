@@ -508,6 +508,58 @@ def transaction_content_views():
 transaction_content_views()
 #-------------------------Fin des fonds en caisse ---------------#
 
+
+#-------------------------Debut sisie sortie de caisse ----------#
+
+def table_exists_sortie_transa(connection, SortieCaisse):
+    # Vérifie si une table existe dans la base de données
+    cursor = connection.cursor()
+    cursor.execute(f"SHOW TABLES LIKE '{SortieCaisse}'")
+    result = cursor.fetchone()
+    cursor.close()
+    return result is not None
+
+
+def create_table_sortie_transa_if_not_exist(connection):
+    # Crée la table TabLocataire si elle n'existe pas déjà
+    create_table_query = """
+    CREATE TABLE IF NOT EXISTS SortieCaisse (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        beneficiaire VARCHAR(255),
+        dateSortieCaisse VARCHAR(255),
+        detailSortieCaisse VARCHAR(255),
+        montantSorti VARCHAR(255),
+        effectue_par VARCHAR(255)
+    );
+    """
+    cursor = connection.cursor()
+    cursor.execute(create_table_query)
+    connection.commit()
+    cursor.close()
+
+def insert_sortie_caisse(beneficiaire, dateSortieCaisse, detailSortieCaisse, montantSorti, effectue_par):
+    try:
+        connection = mysql.connector.connect(**mysql_config)
+        cursor = connection.cursor()
+        
+        if not table_exists_sortie_transa(connection, 'SortieCaisse'):
+            create_table_sortie_transa_if_not_exist(connection)
+        
+        insert_sortie_caisse = "INSERT INTO SortieCaisse(beneficiaire, dateSortieCaisse, detailSortieCaisse, montantSorti, effectue_par) VALUES (%s, %s, %s, %s, %s);"
+        
+        values = (venant_de, dateEncaissement, detailsEncaissement, montantEncaissement, saiai_par)
+        
+        cursor.execute(insert_sortie_caisse, values)
+        connection.commit()
+        
+        cursor.close()
+        connection.close()
+        
+        return True
+    except Exception as e:
+        print(e)
+        return False
+
 def transaction_content_views_depenses():
     if st.session_state.show_transaction_content_views_depenses:
         st.subheader("Saisir une sortie de caisse")
@@ -515,20 +567,59 @@ def transaction_content_views_depenses():
             beneficiaire = st.text_input(label="Bénéficiaire", value="", placeholder="Saisir le Bénéficiaire")
             dateSortieCaisse = st.date_input(label="Date de saisie")
             detailSortieCaisse = st.text_area(label="Details", value="", placeholder="Saisir les details de la sortie de caisse")
-            saisiPar = st.text_input(label="Montant", value="", placeholder="Montant de la dépense")
+            montantSorti = st.text_input(label="Montant", value="", placeholder="Montant de la dépense")
+            effectue_par = st.text_input(label="Saisi par", value="", placeholder="")
             
             btn_validation_sortie = st.form_submit_button("Valider")
+            if btn_validation_sortie:
+                if insert_sortie_caisse(beneficiaire, dateSortieCaisse, detailSortieCaisse, montantSorti, effectue_par):
+                    st.success("Opération effectuée avec succès")
 transaction_content_views_depenses()
+
+#-------------------------Fin saisi sortie de caisse-----------#
 
 def recap_transaction_sortie_caisse_content():
     if st.session_state.show_recap_transaction_sortie_caisse_content:
         st.subheader("Recap des depenses")
+        connection = mysql.connector.connect(**mysql_config)
+        cursor = connection.cursor()
+        
+        query_sortie_caisse = "SELECT beneficiaire, dateSortieCaisse, detailSortieCaisse, montantSorti, effectue_par FROM SortieCaisse"
+        cursor.execute(query_sortie_caisse)
+        
+        data = cursor.fetchall()
+        
+        cursor.close()
+        connection.close()
+        
+        column_titles = ["Béneficiaire", "Date sortie de caisse", "Details de l'opération", "Montant", "Effectué par"]
+        
+        df_sortie_caisse = pd.DataFrame(data, columns=column_titles)
+        
+        st.table(df_sortie_caisse)
 recap_transaction_sortie_caisse_content()
 
 
 def recap_transaction_ventes_content_view():
     if st.session_state.show_recap_transaction_ventes_content_view:
         st.subheader("Recap des transactions des entrées caisse")
+        
+        connection = mysql.connector.connect(**mysql_config)
+        cursor = connection.cursor()
+        
+        query_entree_caisse = "SELECT venant_de, dateEncaissement, detailsEncaissement, montantEncaissement, saiai_par FROM EntreeCaisse"
+        cursor.execute(query_entree_caisse)
+        
+        data = cursor.fetchall()
+        
+        cursor.close()
+        connection.close()
+        
+        column_titles = ["Provenant de", "Date de saisie", "Details de la provenance", "Montant", "Saisi par"]
+        
+        df_entree_caisse = pd.DataFrame(data, columns=column_titles)
+        
+        st.table(df_entree_caisse)
 recap_transaction_ventes_content_view()
 
 sectionListClient = st.container()
