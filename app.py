@@ -18,6 +18,9 @@ mysql_config = {
 
 #state des def a afficher --------------------------------------------
 
+if 'show_graphes_content_view' not in st.session_state:
+    st.session_state.show_graphes_content_view = False
+
 
 if 'show_register_user_content' not in st.session_state:
     st.session_state.show_register_user_content = False
@@ -80,7 +83,7 @@ def accueil_content():
                 sortiCaisse_btn = expanderTransactions.button("Sortie de caisse")
                 btn_tables_ventes = expanderTransactions.button("Recap des dépenses")
                 btn_tablesDepenses = expanderTransactions.button("Recap des entrées caisse")
-                    
+                btn_analyse_graphes = expanderTransactions.button("Graphiques - Analyses")
                 
                 #---------------------------------------------------------------
                 expanderGlaces = st.sidebar.expander("Vente glaces")
@@ -126,7 +129,24 @@ def accueil_content():
                 
                 
             # Afficher le contenu de la page sélectionnée
+            if btn_analyse_graphes:
+                st.st.session_state.show_graphes_content_view = True
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
+            
             if suppClient_btn:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -143,6 +163,7 @@ def accueil_content():
             
             
             if tabrecap_btn:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = True
                 st.session_state.show_ajout_client = False
@@ -159,6 +180,7 @@ def accueil_content():
                 
             
             if gestlocat_btn:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -174,6 +196,7 @@ def accueil_content():
                 st.session_state.show_recap_transaction_sortie_caisse_content = False
                         
             if tabdeb_btn:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -190,6 +213,7 @@ def accueil_content():
                 tabdebarquement_content()
                         
             if gestClient_btn :
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = True
@@ -206,6 +230,7 @@ def accueil_content():
                 #gestion_client_content()
                         
             if btnRegister:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -222,6 +247,7 @@ def accueil_content():
                 
                             
             if BtnListProfil:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -238,6 +264,7 @@ def accueil_content():
                 list_client()
                         
             if listLocation:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -254,6 +281,7 @@ def accueil_content():
                 location_list()
                             
             if paiementLocation:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -269,6 +297,7 @@ def accueil_content():
                 st.session_state.show_recap_transaction_sortie_caisse_content = False
                         
             if verifLocation:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -285,6 +314,7 @@ def accueil_content():
                 
                 
             if venteGlace_btn:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -301,6 +331,7 @@ def accueil_content():
                 #venteGlaces_content()
                 
             if recapVenteGlaces_btn:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -318,6 +349,7 @@ def accueil_content():
                 
                 
             if saisiCaisse_btn:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -333,6 +365,7 @@ def accueil_content():
                 st.session_state.show_recap_transaction_sortie_caisse_content = False
                 
             if sortiCaisse_btn:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -348,6 +381,7 @@ def accueil_content():
                 st.session_state.show_recap_transaction_sortie_caisse_content = False
                 
             if btn_tables_ventes:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = True
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -363,6 +397,7 @@ def accueil_content():
                 st.session_state.show_recap_transaction_sortie_caisse_content = False
                 
             if btn_tablesDepenses:
+                st.st.session_state.show_graphes_content_view = False
                 st.session_state.show_recap_transaction_ventes_content_view = False
                 st.session_state.show_dashboard_content = False
                 st.session_state.show_ajout_client = False
@@ -1194,12 +1229,6 @@ def dashboard_content():
 dashboard_content()
 #------------------------------------------------ Fin debarquements --------------------------------------------#
 
-#------------------------- "Tableau de bord" ----------------------------#
-
-
-
-
-
 
 
 #-------------------------------- Logon --------------------------------#
@@ -1212,6 +1241,7 @@ with headerSection:
     else:
         if st.session_state['loggedIn']:
             accueil_content()
+            
         else:
             show_login_page()
             
