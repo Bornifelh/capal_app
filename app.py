@@ -547,7 +547,7 @@ def insert_sortie_caisse(beneficiaire, dateSortieCaisse, detailSortieCaisse, mon
         
         insert_sortie_caisse = "INSERT INTO SortieCaisse(beneficiaire, dateSortieCaisse, detailSortieCaisse, montantSorti, effectue_par) VALUES (%s, %s, %s, %s, %s);"
         
-        values = (venant_de, dateEncaissement, detailsEncaissement, montantEncaissement, saiai_par)
+        values = (beneficiaire, dateSortieCaisse, detailSortieCaisse, montantSorti, effectue_par)
         
         cursor.execute(insert_sortie_caisse, values)
         connection.commit()
