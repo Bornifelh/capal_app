@@ -78,8 +78,8 @@ def accueil_content():
             with expanderTransactions:
                 saisiCaisse_btn = expanderTransactions.button("Saisie de caisse")
                 sortiCaisse_btn = expanderTransactions.button("Sortie de caisse")
-                btn_tables_ventes = expanderTransactions.button("Recap des entrées caisse")
-                btn_tablesDepenses = expanderTransactions.button("Recap des dépenses")
+                btn_tables_ventes = expanderTransactions.button("Recap des dépenses")
+                btn_tablesDepenses = expanderTransactions.button("Recap des entrées caisse")
                     
                 
                 #---------------------------------------------------------------
