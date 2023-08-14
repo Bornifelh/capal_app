@@ -20,48 +20,48 @@ mysql_config = {
 
 
 if 'show_register_user_content' not in st.session_state:
-    st.session_state['show_register_user_content'] = False
+    st.session_state.show_register_user_content = False
 
 
 if 'show_recapVenteGlaces_content' not in st.session_state:
-    st.session_state['show_recapVenteGlaces_content'] = False
+    st.session_state.show_recapVenteGlaces_content = False
 
 if 'show_vente_glaces_content' not in st.session_state:
-    st.session_state['show_vente_glaces_content'] = False
+    st.session_state.show_vente_glaces_content = False
 
 
 if 'show_location_paiement_content' not in st.session_state:
-    st.session_state['show_location_paiement_content'] = False
+    st.session_state.show_location_paiement_content = False
 
 if 'show_location_verif_content' not in st.session_state:
-    st.session_state['show_location_verif_content'] = False
+    st.session_state.show_location_verif_content = False
 
 if 'show_location_content' not in st.session_state:
-    st.session_state['show_location_content'] = False
+    st.session_state.show_location_content = False
 
 if 'show_transaction_content_views' not in st.session_state:
-    st.session_state['show_transaction_content_views'] = False
+    st.session_state.show_transaction_content_views = False
 
 if 'show_supprime_client_content' not in st.session_state:
-    st.session_state['show_supprime_client_content'] = False
+    st.session_state.show_supprime_client_content = False
 
 
 if 'show_dashboard_content' not in st.session_state:
-    st.session_state['show_dashboard_content'] = False
+    st.session_state.show_dashboard_content = False
     
 
 if 'show_ajout_client' not in st.session_state:
-    st.session_state['show_ajout_client'] = False
+    st.session_state.show_ajout_client = False
 
 
 if 'show_transaction_content_views_depenses' not in st.session_state:
-    st.session_state['show_transaction_content_views_depenses'] = False
+    st.session_state.show_transaction_content_views_depenses = False
     
 if 'show_recap_transaction_ventes_content_view' not in st.session_state:
-    st.session_state['show_recap_transaction_ventes_content_view'] = False
+    st.session_state.show_recap_transaction_ventes_content_view = False
 
 if 'show_recap_transaction_sortie_caisse_content' not in st.session_state:
-    st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+    st.session_state.show_recap_transaction_sortie_caisse_content = False
 
 
 
@@ -127,253 +127,255 @@ def accueil_content():
                 
             # Afficher le contenu de la page sélectionnée
             if suppClient_btn:
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_supprime_client_content'] = True
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = True
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
             
             
             if tabrecap_btn:
-                st.session_state['show_dashboard_content'] = True
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = True
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                 
             
             if gestlocat_btn:
-                st.session_state['show_location_content'] = True
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = True
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                         
             if tabdeb_btn:
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                 tabdebarquement_content()
                         
             if gestClient_btn :
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_ajout_client'] = True
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = True
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                 #gestion_client_content()
                         
             if btnRegister:
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_register_user_content'] = True
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = True
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                 
                             
             if BtnListProfil:
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                 list_client()
                         
             if listLocation:
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                 location_list()
                             
             if paiementLocation:
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_location_paiement_content'] = True
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = True
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                         
             if verifLocation:
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_verif_content'] = True
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = True
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                 
                 
             if venteGlace_btn:
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_vente_glaces_content'] = True
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = True
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                 #venteGlaces_content()
                 
             if recapVenteGlaces_btn:
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = True
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = True
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                 
                 
                 
             if saisiCaisse_btn:
-                st.session_state['show_transaction_content_views'] = True
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = True
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                 
             if sortiCaisse_btn:
-                st.session_state['show_transaction_content_views_depenses'] = True
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = True
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
                 
             if btn_tables_ventes:
-                st.session_state['show_recap_transaction_ventes_content_view'] = True
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = True
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = False
+                
             if btn_tablesDepenses:
-                st.session_state['show_recap_transaction_sortie_caisse_content'] = True
-                st.session_state['show_recap_transaction_ventes_content_view'] = False
-                st.session_state['show_transaction_content_views_depenses'] = False
-                st.session_state['show_transaction_content_views'] = False
-                st.session_state['show_ajout_client'] = False
-                st.session_state['show_location_verif_content'] = False
-                st.session_state['show_recapVenteGlaces_content'] = False
-                st.session_state['show_vente_glaces_content'] = False
-                st.session_state['show_register_user_content'] = False
-                st.session_state['show_location_paiement_content'] = False
-                st.session_state['show_location_content'] = False
-                st.session_state['show_supprime_client_content'] = False
-                st.session_state['show_dashboard_content'] = False
+                st.session_state.show_recap_transaction_ventes_content_view = False
+                st.session_state.show_dashboard_content = False
+                st.session_state.show_ajout_client = False
+                st.session_state.show_location_verif_content = False
+                st.session_state.show_vente_glaces_content = False
+                st.session_state.show_recapVenteGlaces_content = False
+                st.session_state.show_register_user_content = False
+                st.session_state.show_location_paiement_content = False
+                st.session_state.show_location_content = False
+                st.session_state.show_transaction_content_views = False
+                st.session_state.show_supprime_client_content = False
+                st.session_state.show_transaction_content_views_depenses = False
+                st.session_state.show_recap_transaction_sortie_caisse_content = True
 
 
 #------------------------------- Fin accueil et Menu -----------------------------------#
@@ -415,7 +417,7 @@ ajoutClient = st.container() #ajout d'un client dans la bas de donnees
 supprimerClient = st.container() #suppression d'un client dans la base de donnees
 
 def ajout_client():
-    if st.session_state['show_ajout_client']:
+    if st.session_state.show_ajout_client:
         with st.form(key='FormAddClient'):
             nomClient = st.text_input(label="", value="", placeholder="Saisissez le nom du client")
             prenomClient = st.text_input(label="", value="", placeholder="Saisissez le prénom du client")
@@ -461,10 +463,10 @@ def insert_entree_caisse(venant_de, dateEncaissement, detailsEncaissement, monta
         connection = mysql.connector.connect(**mysql_config)
         cursor = connection.cursor()
         
-        if not table_exists(connection, 'EntreeCaisse'):
-            create_table_if_not_exist(connection)
+        if not table_exists_saisi_transa(connection, 'EntreeCaisse'):
+            create_table_saisi_transa_if_not_exist(connection)
         
-        insert_query_locataire = "INSERT INTO EntreeCaisse(venant_de, dateEncaissement, detailsEncaissement, montantEncaissement, saiai_par) VALUES (%s, %s, %s, %s, %s);"
+        insert_entree_caisse = "INSERT INTO EntreeCaisse(venant_de, dateEncaissement, detailsEncaissement, montantEncaissement, saiai_par) VALUES (%s, %s, %s, %s, %s);"
         
         values = (venant_de, dateEncaissement, detailsEncaissement, montantEncaissement, saiai_par)
         
@@ -483,7 +485,7 @@ def insert_entree_caisse(venant_de, dateEncaissement, detailsEncaissement, monta
 
 
 def transaction_content_views():
-    if st.session_state['show_transaction_content_views']:
+    if st.session_state.show_transaction_content_views:
         st.subheader("Saisie de caisse - entrée des fonds")
         with st.form(key='FormTransact'):
             venant_de = st.text_input(label="Provenance", value="", placeholder="Provenance des fonds")
@@ -501,11 +503,13 @@ def transaction_content_views():
                     montantEncaissement = ""
                     saiai_par = ""
                     
+                else:
+                    st.error("Impossible d'effectuer l'opération, merci de vérifier votre connexion internet")
 transaction_content_views()
 #-------------------------Fin des fonds en caisse ---------------#
 
 def transaction_content_views_depenses():
-    if st.session_state['show_transaction_content_views_depenses']:
+    if st.session_state.show_transaction_content_views_depenses:
         st.subheader("Saisir une sortie de caisse")
         with st.form(key='FormTransactionSortie'):
             beneficiaire = st.text_input(label="Bénéficiaire", value="", placeholder="Saisir le Bénéficiaire")
@@ -517,13 +521,13 @@ def transaction_content_views_depenses():
 transaction_content_views_depenses()
 
 def recap_transaction_sortie_caisse_content():
-    if st.session_state['show_recap_transaction_sortie_caisse_content']:
+    if st.session_state.show_recap_transaction_sortie_caisse_content:
         st.subheader("Recap des depenses")
 recap_transaction_sortie_caisse_content()
 
 
 def recap_transaction_ventes_content_view():
-    if st.session_state['show_recap_transaction_ventes_content_view']:
+    if st.session_state.show_recap_transaction_ventes_content_view:
         st.subheader("Recap des transactions des entrées caisse")
 recap_transaction_ventes_content_view()
 
@@ -550,7 +554,7 @@ def list_client():
 
 def gestion_client_content():
     
-    if st.session_state['show_supprime_client_content']:
+    if st.session_state.show_supprime_client_content:
         st.subheader("Supprimer un client")
         with st.form(key ='DeleteClient'):
             connection = mysql.connector.connect(**mysql_config)
@@ -685,7 +689,7 @@ def nouveau_locataire(locataire, numeroBox, montantLoc, dateEntree, typeBox, ord
 
     
 def register_user_content():
-    if st.session_state['show_register_user_content']:
+    if st.session_state.show_register_user_content:
         with st.form(key ='RegisterUsers'):
             st.subheader("Créer un utilisateur")
             FullName = st.text_input(label="", value="", placeholder="Saisissez votre Nom")
@@ -827,7 +831,7 @@ def nouveau_PaiementLoc(NomClient, PeriodePayement, TypeLocation, NumeroBox, mon
 
 
 def venteGlaces_content():
-    if st.session_state['show_vente_glaces_content']:
+    if st.session_state.show_vente_glaces_content:
         #form_key = f"FormVenteGlace_{int(time.time() * 1000)}"
         with st.form(key='FormVenteGlace'):
             st.subheader("Vente des glaces")
@@ -848,7 +852,7 @@ venteGlaces_content()
 
 
 def recapVenteGlaces_content(): #Tableau de vente des glaces
-    if st.session_state['show_recapVenteGlaces_content']:
+    if st.session_state.show_recapVenteGlaces_content:
         
         st.subheader("Suivi de vente des glaces")
         connection = mysql.connector.connect(**mysql_config)
@@ -879,7 +883,7 @@ recapVenteGlaces_content()
 
 
 def location_paiement_content(): #Saisi des paiements de locations
-    if st.session_state['show_location_paiement_content']:
+    if st.session_state.show_location_paiement_content:
         st.subheader("Paiement des locations")
         with st.form(key='PaiementLocation'):
             connection = mysql.connector.connect(**mysql_config)
@@ -910,7 +914,7 @@ def location_paiement_content(): #Saisi des paiements de locations
 location_paiement_content()
 
 def location_verif_content(): #verification de l'etat d'un client
-    if st.session_state['show_location_verif_content']:
+    if st.session_state.show_location_verif_content:
         st.subheader("Situation d'un locataire")
         with st.form(key='VerifLoc'):
             connection = mysql.connector.connect(**mysql_config)
@@ -944,7 +948,7 @@ location_verif_content()
 
 
 def location_content(): #saisi des location (debut de location)
-    if st.session_state['show_location_content']:
+    if st.session_state.show_location_content:
         if st.session_state['loggedIn']:
             username = st.session_state['userName']
             with st.form(key ='FormLocation'):
@@ -1022,7 +1026,7 @@ def tabdebarquement_content():
 
 
 def dashboard_content():
-    if st.session_state['show_dashboard_content']:
+    if st.session_state.show_dashboard_content:
         
             st.subheader("Debarquement - saisie des donnees")
             
