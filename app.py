@@ -428,6 +428,59 @@ ajout_client()
 #-----------------------------------------------------------------#
         
         
+#-------------------------Entree des fonds en caisse ---------------#
+
+def table_exists_saisi_transa(connection, EntreeCaisse):
+    # Vérifie si une table existe dans la base de données
+    cursor = connection.cursor()
+    cursor.execute(f"SHOW TABLES LIKE '{EntreeCaisse}'")
+    result = cursor.fetchone()
+    cursor.close()
+    return result is not None
+
+
+def create_table_saisi_transa_if_not_exist(connection):
+    # Crée la table TabLocataire si elle n'existe pas déjà
+    create_table_query = """
+    CREATE TABLE IF NOT EXISTS EntreeCaisse (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        venant_de VARCHAR(255),
+        dateEncaissement VARCHAR(255),
+        detailsEncaissement VARCHAR(255),
+        montantEncaissement VARCHAR(255),
+        saiai_par VARCHAR(255)
+    );
+    """
+    cursor = connection.cursor()
+    cursor.execute(create_table_query)
+    connection.commit()
+    cursor.close()
+
+def insert_entree_caisse(venant_de, dateEncaissement, detailsEncaissement, montantEncaissement, saiai_par):
+    try:
+        connection = mysql.connector.connect(**mysql_config)
+        cursor = connection.cursor()
+        
+        if not table_exists(connection, 'EntreeCaisse'):
+            create_table_if_not_exist(connection)
+        
+        insert_query_locataire = "INSERT INTO EntreeCaisse(venant_de, dateEncaissement, detailsEncaissement, montantEncaissement, saiai_par) VALUES (%s, %s, %s, %s, %s);"
+        
+        values = (venant_de, dateEncaissement, detailsEncaissement, montantEncaissement, saiai_par)
+        
+        cursor.execute(insert_entree_caisse, values)
+        connection.commit()
+        
+        cursor.close()
+        connection.close()
+        
+        return True
+    except Exception as e:
+        print(e)
+        return False
+
+
+
 
 def transaction_content_views():
     if st.session_state['show_transaction_content_views']:
@@ -437,10 +490,19 @@ def transaction_content_views():
             dateEncaissement = st.date_input(label="Date encaissement")
             detailsEncaissement = st.text_area(label="Details", value="", placeholder="Details sur la provenance des fonds")
             montantEncaissement = st.text_input(label="Montant", value="", placeholder="Montant réçu")
-            
+            saiai_par = st.text_input(label="Saisi par",value="", placeholder="")
             btn_validation = st.form_submit_button("Valider")
+            if btn_validation:
+                if insert_entree_caisse(venant_de, dateEncaissement, detailsEncaissement, montantEncaissement, saiai_par):
+                    st.success("Encaissement effectué avec succès")
+                    venant_de = ""
+                    dateEncaissement = ""
+                    detailsEncaissement = ""
+                    montantEncaissement = ""
+                    saiai_par = ""
+                    
 transaction_content_views()
-
+#-------------------------Fin des fonds en caisse ---------------#
 
 def transaction_content_views_depenses():
     if st.session_state['show_transaction_content_views_depenses']:
